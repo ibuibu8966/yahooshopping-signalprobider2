@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Shield,
   Users,
@@ -49,40 +48,47 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="py-20 bg-[#F5F5F5]">
-      <div className="container mx-auto px-4">
+    <section id="benefits" className="py-24 md:py-32 bg-[#FDFBF7] relative overflow-hidden">
+      {/* 装飾 */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent" />
+
+      <div className="container mx-auto px-4 md:px-8">
         {/* セクションヘッダー */}
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-2xl md:text-4xl font-bold text-[#0f0f23] mb-4">
-            選ばれる<span className="text-[#D4AF37]">6つの理由</span>
+        <div className="text-center mb-16 md:mb-20">
+          <span className="text-[#C9A84C] text-sm tracking-[0.3em] uppercase mb-4 block">
+            Why Choose Us
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#0a0a1a] mb-6 tracking-tight">
+            選ばれる<span className="gradient-gold-text">6つの理由</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-[#0a0a1a]/60 max-w-2xl mx-auto leading-relaxed">
             センリツヤフショシグナルプロバイダーが多くのオーナー様に選ばれている理由をご紹介します。
           </p>
         </div>
 
         {/* ベネフィットカード */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
-            <Card
+            <div
               key={index}
-              className="bg-white border-none shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="group bg-white p-8 md:p-10 border border-[#0a0a1a]/5 hover:border-[#C9A84C]/30 transition-all duration-500 hover:shadow-luxury"
             >
-              <CardContent className="p-6">
-                <div className="w-12 h-12 bg-[#D4AF37]/10 rounded-lg flex items-center justify-center mb-4">
-                  <benefit.icon className="w-6 h-6 text-[#D4AF37]" />
-                </div>
-                <h3 className="font-heading text-lg font-bold text-[#0f0f23] mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {benefit.description}
-                </p>
-              </CardContent>
-            </Card>
+              <div className="w-14 h-14 border border-[#C9A84C]/30 rounded-full flex items-center justify-center mb-6 group-hover:bg-[#C9A84C]/5 transition-colors duration-300">
+                <benefit.icon className="w-6 h-6 text-[#C9A84C]" />
+              </div>
+              <h3 className="font-heading text-xl font-bold text-[#0a0a1a] mb-3 tracking-wide">
+                {benefit.title}
+              </h3>
+              <p className="text-[#0a0a1a]/60 text-sm leading-relaxed">
+                {benefit.description}
+              </p>
+            </div>
           ))}
         </div>
       </div>
+
+      {/* 装飾 */}
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent" />
     </section>
   );
 }

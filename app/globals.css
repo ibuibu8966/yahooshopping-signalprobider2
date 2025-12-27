@@ -48,8 +48,10 @@
   /* カスタムカラー */
   --color-navy: var(--navy);
   --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
   --color-yahoo-red: var(--yahoo-red);
   --color-light-gray: var(--light-gray);
+  --color-cream: var(--cream);
 }
 
 :root {
@@ -86,11 +88,15 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* カスタムカラー */
-  --navy: #0f0f23;
-  --gold: #D4AF37;
+  /* カスタムカラー - 高級感のあるパレット */
+  --navy: #0a0a1a;
+  --navy-light: #12122a;
+  --gold: #C9A84C;
+  --gold-light: #E8D5A3;
+  --gold-dark: #A68A3A;
   --yahoo-red: #FF0033;
-  --light-gray: #F5F5F5;
+  --light-gray: #F8F8F8;
+  --cream: #FDFBF7;
 }
 
 .dark {
@@ -145,13 +151,74 @@ html {
 .font-heading {
   font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
   font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .font-body {
   font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
   font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 .font-number {
   font-family: "Inter", "Roboto Mono", monospace;
+  font-weight: 600;
+}
+
+/* 高級感のあるグラデーション */
+.gradient-gold {
+  background: linear-gradient(135deg, #C9A84C 0%, #E8D5A3 50%, #C9A84C 100%);
+}
+
+.gradient-gold-text {
+  background: linear-gradient(135deg, #C9A84C 0%, #E8D5A3 50%, #C9A84C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-dark {
+  background: linear-gradient(180deg, #0a0a1a 0%, #12122a 100%);
+}
+
+/* 高級感のあるボーダー */
+.border-gold-gradient {
+  border: 1px solid transparent;
+  background: linear-gradient(#0a0a1a, #0a0a1a) padding-box,
+              linear-gradient(135deg, #C9A84C 0%, #E8D5A3 50%, #C9A84C 100%) border-box;
+}
+
+/* シャドウ */
+.shadow-gold {
+  box-shadow: 0 4px 20px rgba(201, 168, 76, 0.15);
+}
+
+.shadow-luxury {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1), 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* テキストシャドウ */
+.text-shadow {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* アニメーション */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 168, 76, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
 }

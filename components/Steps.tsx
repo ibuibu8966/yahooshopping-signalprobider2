@@ -26,54 +26,62 @@ const steps = [
 
 export default function Steps() {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-24 md:py-32 bg-[#0a0a1a] relative overflow-hidden">
+      {/* 背景装飾 */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#C9A84C]/3 rounded-full blur-[150px]" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         {/* セクションヘッダー */}
-        <div className="text-center mb-16">
-          <h2 className="font-heading text-2xl md:text-4xl font-bold text-[#0f0f23] mb-4">
-            <span className="text-[#D4AF37]">3ステップ</span>で始める
+        <div className="text-center mb-16 md:mb-20">
+          <span className="text-[#C9A84C] text-sm tracking-[0.3em] uppercase mb-4 block">
+            How It Works
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            <span className="gradient-gold-text">3ステップ</span>で始める
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-white/50 max-w-2xl mx-auto leading-relaxed">
             シンプルな導入プロセスで、すぐに運用を開始できます。
           </p>
         </div>
 
         {/* ステップ */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="relative">
             {/* 接続線（デスクトップ） */}
-            <div className="hidden md:block absolute top-24 left-[16.67%] right-[16.67%] h-0.5 bg-[#D4AF37]/30" />
+            <div className="hidden md:block absolute top-[100px] left-[20%] right-[20%] h-[1px] bg-gradient-to-r from-[#C9A84C]/50 via-[#C9A84C]/20 to-[#C9A84C]/50" />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
               {steps.map((step, index) => (
                 <div key={index} className="relative">
                   {/* ステップカード */}
-                  <div className="bg-white rounded-2xl p-6 text-center relative z-10">
+                  <div className="text-center relative z-10">
                     {/* ステップ番号 */}
-                    <div className="font-number text-5xl font-bold text-[#D4AF37]/20 mb-4">
+                    <div className="font-number text-7xl md:text-8xl font-bold text-[#C9A84C]/10 mb-2 tracking-tighter">
                       {step.number}
                     </div>
 
                     {/* アイコン */}
-                    <div className="w-16 h-16 bg-[#0f0f23] rounded-full flex items-center justify-center mx-auto mb-4">
-                      <step.icon className="w-8 h-8 text-[#D4AF37]" />
+                    <div className="w-20 h-20 border border-[#C9A84C]/30 rounded-full flex items-center justify-center mx-auto mb-6 bg-[#0a0a1a] relative -mt-12">
+                      <step.icon className="w-8 h-8 text-[#C9A84C]" />
                     </div>
 
                     {/* タイトル */}
-                    <h3 className="font-heading text-xl font-bold text-[#0f0f23] mb-3">
+                    <h3 className="font-heading text-xl md:text-2xl font-bold text-white mb-4 tracking-wide">
                       {step.title}
                     </h3>
 
                     {/* 説明 */}
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-white/50 text-sm leading-relaxed max-w-xs mx-auto">
                       {step.description}
                     </p>
                   </div>
 
                   {/* 矢印（モバイル） */}
                   {index < steps.length - 1 && (
-                    <div className="md:hidden flex justify-center my-4">
-                      <div className="w-0.5 h-8 bg-[#D4AF37]/30" />
+                    <div className="md:hidden flex justify-center my-8">
+                      <div className="w-[1px] h-12 bg-gradient-to-b from-[#C9A84C]/50 to-transparent" />
                     </div>
                   )}
                 </div>

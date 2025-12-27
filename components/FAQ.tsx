@@ -47,14 +47,22 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="faq" className="py-24 md:py-32 bg-[#0a0a1a] relative overflow-hidden">
+      {/* 背景装飾 */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#C9A84C]/3 rounded-full blur-[150px]" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         {/* セクションヘッダー */}
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-2xl md:text-4xl font-bold text-[#0f0f23] mb-4">
-            よくある<span className="text-[#D4AF37]">ご質問</span>
+        <div className="text-center mb-16 md:mb-20">
+          <span className="text-[#C9A84C] text-sm tracking-[0.3em] uppercase mb-4 block">
+            FAQ
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            よくある<span className="gradient-gold-text">ご質問</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-white/50 max-w-2xl mx-auto leading-relaxed">
             お申し込み前の疑問にお答えします。その他のご質問は無料相談でお気軽にどうぞ。
           </p>
         </div>
@@ -66,12 +74,12 @@ export default function FAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-[#F5F5F5] rounded-lg border-none px-6"
+                className="bg-[#12122a] border border-white/5 px-6 md:px-8 data-[state=open]:border-[#C9A84C]/20"
               >
-                <AccordionTrigger className="text-left font-heading font-bold text-[#0f0f23] hover:text-[#D4AF37] hover:no-underline py-5">
+                <AccordionTrigger className="text-left font-heading font-bold text-white hover:text-[#C9A84C] hover:no-underline py-6 tracking-wide">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 leading-relaxed pb-5">
+                <AccordionContent className="text-white/60 leading-relaxed pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

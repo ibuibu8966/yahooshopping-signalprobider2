@@ -3,45 +3,64 @@ import { ArrowRight, Shield, TrendingUp, Clock } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-[#0f0f23] pt-16 md:pt-20">
+    <section className="relative min-h-screen flex items-center gradient-dark pt-20 md:pt-24 overflow-hidden">
       {/* 背景グラデーション */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f23] via-[#0f0f23] to-[#1a1a3e] opacity-80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a1a] via-[#0a0a1a] to-[#12122a]" />
 
       {/* 装飾的な背景パターン */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#D4AF37] rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D4AF37] rounded-full blur-3xl" />
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-[#C9A84C]/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[#C9A84C]/3 rounded-full blur-[150px]" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* 装飾的なライン */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-[#C9A84C]/10 to-transparent" />
+        <div className="absolute top-0 right-1/4 w-[1px] h-full bg-gradient-to-b from-transparent via-[#C9A84C]/10 to-transparent" />
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* サブタイトル */}
+          <div className="inline-block mb-6">
+            <span className="text-[#C9A84C]/80 text-sm md:text-base tracking-[0.3em] uppercase">
+              Yahoo! Shopping Full Support Service
+            </span>
+          </div>
+
           {/* メインキャッチ */}
-          <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
             資金を入れるだけ。
             <br />
-            <span className="text-[#D4AF37]">あとは全部お任せ。</span>
+            <span className="gradient-gold-text">あとは全部お任せ。</span>
           </h1>
 
           {/* サブキャッチ */}
-          <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl text-white/60 mb-12 max-w-3xl mx-auto leading-relaxed tracking-wide">
             月額費以上の利益を保証する
             <br className="sm:hidden" />
-            ヤフショ完全代行サービス
+            ヤフーショッピング完全代行サービス
           </p>
 
           {/* 3つの特徴 */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-10">
-            <div className="flex items-center gap-2 text-white/70">
-              <Shield className="w-5 h-5 text-[#D4AF37]" />
-              <span className="text-sm md:text-base">利益保証</span>
+          <div className="flex flex-wrap justify-center gap-6 md:gap-12 mb-14">
+            <div className="flex items-center gap-3 text-white/50">
+              <div className="w-10 h-10 rounded-full border border-[#C9A84C]/30 flex items-center justify-center">
+                <Shield className="w-5 h-5 text-[#C9A84C]" />
+              </div>
+              <span className="text-sm md:text-base tracking-wide">利益保証</span>
             </div>
-            <div className="flex items-center gap-2 text-white/70">
-              <TrendingUp className="w-5 h-5 text-[#D4AF37]" />
-              <span className="text-sm md:text-base">完全代行</span>
+            <div className="flex items-center gap-3 text-white/50">
+              <div className="w-10 h-10 rounded-full border border-[#C9A84C]/30 flex items-center justify-center">
+                <TrendingUp className="w-5 h-5 text-[#C9A84C]" />
+              </div>
+              <span className="text-sm md:text-base tracking-wide">完全代行</span>
             </div>
-            <div className="flex items-center gap-2 text-white/70">
-              <Clock className="w-5 h-5 text-[#D4AF37]" />
-              <span className="text-sm md:text-base">作業時間ゼロ</span>
+            <div className="flex items-center gap-3 text-white/50">
+              <div className="w-10 h-10 rounded-full border border-[#C9A84C]/30 flex items-center justify-center">
+                <Clock className="w-5 h-5 text-[#C9A84C]" />
+              </div>
+              <span className="text-sm md:text-base tracking-wide">作業時間ゼロ</span>
             </div>
           </div>
 
@@ -50,9 +69,9 @@ export default function Hero() {
             <Button
               asChild
               size="lg"
-              className="bg-[#D4AF37] hover:bg-[#B8962F] text-[#0f0f23] font-bold text-lg px-8 py-6 h-auto"
+              className="bg-gradient-to-r from-[#C9A84C] to-[#E8D5A3] hover:from-[#E8D5A3] hover:to-[#C9A84C] text-[#0a0a1a] font-bold text-lg px-10 py-7 h-auto rounded-sm shadow-gold transition-all duration-300"
             >
-              <a href="#cta" className="flex items-center gap-2">
+              <a href="#cta" className="flex items-center gap-3 tracking-wide">
                 無料相談を予約する
                 <ArrowRight className="w-5 h-5" />
               </a>
@@ -61,31 +80,35 @@ export default function Hero() {
               asChild
               variant="outline"
               size="lg"
-              className="border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10 font-bold text-lg px-8 py-6 h-auto"
+              className="border-[#C9A84C]/50 text-[#C9A84C] hover:bg-[#C9A84C]/10 hover:border-[#C9A84C] font-bold text-lg px-10 py-7 h-auto rounded-sm transition-all duration-300 bg-transparent"
             >
-              <a href="#benefits">サービス詳細を見る</a>
+              <a href="#benefits" className="tracking-wide">サービス詳細を見る</a>
             </Button>
           </div>
 
           {/* 信頼性バッジ */}
-          <div className="mt-12 pt-8 border-t border-white/10">
-            <p className="text-white/50 text-sm mb-4">
-              安心してご利用いただけます
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 text-white/60 text-sm">
-              <span>✓ 初月から利益保証</span>
-              <span>✓ 専任サポート付き</span>
-              <span>✓ いつでも解約可能</span>
+          <div className="mt-20 pt-10 border-t border-white/5">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-white/40 text-sm tracking-wide">
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-[#C9A84C] rounded-full" />
+                初月から利益保証
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-[#C9A84C] rounded-full" />
+                専任サポート付き
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-[#C9A84C] rounded-full" />
+                いつでも解約可能
+              </span>
             </div>
           </div>
         </div>
       </div>
 
       {/* スクロールインジケーター */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-          <div className="w-1 h-3 bg-[#D4AF37] rounded-full" />
-        </div>
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+        <div className="w-[1px] h-16 bg-gradient-to-b from-[#C9A84C]/50 to-transparent animate-pulse" />
       </div>
     </section>
   );

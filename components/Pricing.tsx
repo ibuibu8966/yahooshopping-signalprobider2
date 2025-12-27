@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Check, Star } from "lucide-react";
+import { Check } from "lucide-react";
 
 const initialServices = [
   "ヤフショアカウントの作成",
@@ -21,86 +20,95 @@ const monthlyServices = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 bg-[#0f0f23]">
-      <div className="container mx-auto px-4">
+    <section id="pricing" className="py-24 md:py-32 bg-[#FDFBF7] relative overflow-hidden">
+      {/* 装飾 */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent" />
+
+      <div className="container mx-auto px-4 md:px-8">
         {/* セクションヘッダー */}
-        <div className="text-center mb-12">
-          <h2 className="font-heading text-2xl md:text-4xl font-bold text-white mb-4">
-            シンプルな<span className="text-[#D4AF37]">料金体系</span>
+        <div className="text-center mb-16 md:mb-20">
+          <span className="text-[#C9A84C] text-sm tracking-[0.3em] uppercase mb-4 block">
+            Pricing
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-[#0a0a1a] mb-6 tracking-tight">
+            シンプルな<span className="gradient-gold-text">料金体系</span>
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
+          <p className="text-[#0a0a1a]/60 max-w-2xl mx-auto leading-relaxed">
             初期費用と月額費用のみ。追加料金は一切ありません。
           </p>
         </div>
 
         {/* 料金カード */}
-        <div className="max-w-4xl mx-auto">
-          <Card className="bg-white border-2 border-[#D4AF37] overflow-hidden">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-white border border-[#0a0a1a]/5 shadow-luxury overflow-hidden">
             {/* バッジ */}
-            <div className="bg-[#D4AF37] text-[#0f0f23] text-center py-2 font-bold flex items-center justify-center gap-2">
-              <Star className="w-4 h-4" />
-              人気No.1プラン
-              <Star className="w-4 h-4" />
+            <div className="bg-gradient-to-r from-[#C9A84C] to-[#E8D5A3] text-[#0a0a1a] text-center py-3 font-bold tracking-wider text-sm">
+              FULL MANAGED PLAN
             </div>
 
-            <CardHeader className="text-center pb-0 pt-8">
-              <h3 className="font-heading text-2xl font-bold text-[#0f0f23] mb-2">
-                フルマネージドプラン
-              </h3>
-              <p className="text-gray-600">
-                すべてお任せの完全代行サービス
-              </p>
-            </CardHeader>
+            <div className="p-8 md:p-12">
+              {/* プラン名 */}
+              <div className="text-center mb-12">
+                <h3 className="font-heading text-2xl md:text-3xl font-bold text-[#0a0a1a] mb-3 tracking-wide">
+                  フルマネージドプラン
+                </h3>
+                <p className="text-[#0a0a1a]/50">
+                  すべてお任せの完全代行サービス
+                </p>
+              </div>
 
-            <CardContent className="p-8">
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-8 md:gap-12">
                 {/* 初期費用 */}
-                <div className="bg-[#F5F5F5] rounded-xl p-6">
-                  <div className="text-center mb-6">
-                    <p className="text-gray-600 text-sm mb-1">初期費用</p>
+                <div className="bg-[#FDFBF7] p-8 border border-[#C9A84C]/10">
+                  <div className="text-center mb-8">
+                    <p className="text-[#0a0a1a]/50 text-sm mb-2 tracking-wide">初期費用</p>
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="font-number text-4xl font-bold text-[#0f0f23]">
+                      <span className="text-[#0a0a1a]/30 text-2xl">¥</span>
+                      <span className="font-number text-5xl md:text-6xl font-bold text-[#0a0a1a] tracking-tight">
                         330,000
                       </span>
-                      <span className="text-gray-600">円（税込）</span>
                     </div>
-                    <p className="text-gray-500 text-xs mt-1">初回のみ</p>
+                    <p className="text-[#0a0a1a]/40 text-xs mt-2 tracking-wide">税込 / 初回のみ</p>
                   </div>
 
-                  <div className="space-y-3">
-                    <p className="font-bold text-sm text-[#0f0f23] mb-3">
-                      含まれるサービス：
+                  <div className="space-y-4">
+                    <p className="font-bold text-xs text-[#0a0a1a]/70 tracking-wider uppercase mb-4">
+                      含まれるサービス
                     </p>
                     {initialServices.map((service, index) => (
-                      <div key={index} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-gray-700">{service}</span>
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full border border-[#C9A84C]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-[#C9A84C]" />
+                        </div>
+                        <span className="text-sm text-[#0a0a1a]/70">{service}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* 月額費用 */}
-                <div className="bg-[#0f0f23] rounded-xl p-6">
-                  <div className="text-center mb-6">
-                    <p className="text-white/70 text-sm mb-1">月額費用</p>
+                <div className="bg-[#0a0a1a] p-8">
+                  <div className="text-center mb-8">
+                    <p className="text-white/50 text-sm mb-2 tracking-wide">月額費用</p>
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="font-number text-4xl font-bold text-[#D4AF37]">
+                      <span className="text-[#C9A84C]/50 text-2xl">¥</span>
+                      <span className="font-number text-5xl md:text-6xl font-bold gradient-gold-text tracking-tight">
                         110,000
                       </span>
-                      <span className="text-white/70">円（税込）</span>
                     </div>
-                    <p className="text-white/50 text-xs mt-1">毎月</p>
+                    <p className="text-white/30 text-xs mt-2 tracking-wide">税込 / 毎月</p>
                   </div>
 
-                  <div className="space-y-3">
-                    <p className="font-bold text-sm text-white mb-3">
-                      含まれるサービス：
+                  <div className="space-y-4">
+                    <p className="font-bold text-xs text-white/50 tracking-wider uppercase mb-4">
+                      含まれるサービス
                     </p>
                     {monthlyServices.map((service, index) => (
-                      <div key={index} className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-[#D4AF37] mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-white/80">{service}</span>
+                      <div key={index} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full border border-[#C9A84C]/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-[#C9A84C]" />
+                        </div>
+                        <span className="text-sm text-white/70">{service}</span>
                       </div>
                     ))}
                   </div>
@@ -108,29 +116,32 @@ export default function Pricing() {
               </div>
 
               {/* 利益保証バナー */}
-              <div className="mt-8 bg-[#FF0033]/10 border border-[#FF0033]/30 rounded-lg p-4 text-center">
-                <p className="text-[#FF0033] font-bold">
+              <div className="mt-10 border border-[#C9A84C]/20 p-6 text-center bg-[#C9A84C]/5">
+                <p className="text-[#C9A84C] font-bold tracking-wide">
                   月額費以上の利益を保証します
                 </p>
-                <p className="text-gray-600 text-sm mt-1">
+                <p className="text-[#0a0a1a]/50 text-sm mt-2">
                   万が一達成できない場合は翌月に補填いたします
                 </p>
               </div>
 
               {/* CTAボタン */}
-              <div className="mt-8 text-center">
+              <div className="mt-10 text-center">
                 <Button
                   asChild
                   size="lg"
-                  className="bg-[#D4AF37] hover:bg-[#B8962F] text-[#0f0f23] font-bold text-lg px-12 py-6 h-auto"
+                  className="bg-gradient-to-r from-[#C9A84C] to-[#E8D5A3] hover:from-[#E8D5A3] hover:to-[#C9A84C] text-[#0a0a1a] font-bold text-lg px-14 py-7 h-auto rounded-sm shadow-gold transition-all duration-300 tracking-wide"
                 >
                   <a href="#cta">無料相談を予約する</a>
                 </Button>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
+
+      {/* 装飾 */}
+      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent" />
     </section>
   );
 }
